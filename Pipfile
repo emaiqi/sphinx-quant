@@ -1,10 +1,16 @@
 [[source]]
 name = "pypi"
-url = "https://pypi.org/simple"
+url = "https://mirrors.cloud.tencent.com/pypi/simple"
+verify_ssl = true
+
+[[source]]
+url = "https://rquser:ricequant99@py.ricequant.com/simple"
+name = "rqdata"
 verify_ssl = true
 
 [dev-packages]
 yapf = "*"
+pre-commit = "*"
 
 [packages]
 djangorestframework = "*"
@@ -26,10 +32,14 @@ matplotlib = "*"
 seaborn = "*"
 futu-api = "*"
 tigeropen = "*"
-ibapi = "*"
+ibapi = {file = "https://sphinx-1253762454.file.myqcloud.com/mirror/ibapi-9.75.1-py3-none-any.whl"}
 Django = "*"
 Markdown = "*"
-vnpy = {editable = true,git = "https://github.com/vnpy/vnpy.git",ref = "2.0.1"}
+vnpy = {file = "https://github.com/sphinx-quant/vnpy/archive/master.zip"}
+supervisor = "*"
+uwsgi = "*"
+rqdatac = {version = "*",index = "rqdata"}
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.6"

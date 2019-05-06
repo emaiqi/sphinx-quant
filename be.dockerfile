@@ -1,7 +1,9 @@
-# 构建前端页面
-FROM continuumio/anaconda3:2019.03
+# 构建后端工程
+FROM continuumio/anaconda3:5.2.0
 WORKDIR /app
-RUN conda install python=3.6 
+RUN apt-get update
+RUN apt-get install python3-dev default-libmysqlclient-dev python-psycopg2 libpq-dev python3-tk python3-tk-dbg -y
+RUN pip install pipenv
 COPY ./sphinxquant .
 COPY ./entrypoint.sh .
 RUN pipenv install
